@@ -8,12 +8,143 @@
       "title": "Home View",
       "addToNavigation": true,
       "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "aboutView",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:about",
+          "name": "aboutViewModel",
+          "appName": "My App",
+          "appVersion": "Version 1",
+          "appDescription": "App description",
+          "contactButton": true,
+          "contactLabel": "Contact us",
+          "contactMail": "support@example.com",
+          "facebookButton": true,
+          "facebookLabel": "Like us on Facebook",
+          "facebookLink": "https://www.facebook.com/Telerik",
+          "twitterButton": true,
+          "twitterLabel": "Follow us on Twitter",
+          "twitterLink": "https://twitter.com/telerik"
+        }
+      ],
+      "title": "About Hello World",
+      "addToNavigation": true,
+      "icon": "info"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "masterDetailView",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:editableList",
+          "listExtraFields": [],
+          "detailExtraFields": [],
+          "components": [
+            {
+              "type": "kendo-ui-mobile:editableListForm",
+              "components": [
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "shortText",
+                  "title": "Address",
+                  "inputType": "shortText",
+                  "dataBindingOptional": "Address"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "shortText1",
+                  "title": "Balance",
+                  "inputType": "shortText",
+                  "dataBindingOptional": "Balance"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "shortText2",
+                  "title": "Status",
+                  "inputType": "shortText",
+                  "dataBindingOptional": "Status"
+                }
+              ],
+              "name": "editableListForm1",
+              "formType": "detail"
+            },
+            {
+              "type": "kendo-ui-mobile:editableListForm",
+              "components": [
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "name",
+                  "title": "Name",
+                  "inputType": "text",
+                  "placeholder": "Name",
+                  "dataBinding": "Name"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "address",
+                  "title": "Address",
+                  "inputType": "text",
+                  "placeholder": "Address",
+                  "dataBinding": "Address"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "balance",
+                  "title": "Balance",
+                  "inputType": "text",
+                  "placeholder": "Balance",
+                  "dataBinding": "Address"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "status",
+                  "title": "Status",
+                  "inputType": "text",
+                  "placeholder": "Status",
+                  "dataBinding": "Status"
+                }
+              ],
+              "name": "editableListForm2",
+              "formType": "add"
+            }
+          ],
+          "name": "masterDetailViewModel",
+          "dataProvider": "helloworld",
+          "collection": "Helloworld",
+          "headerField": "Name",
+          "iconField": true,
+          "subHeaderField": "Status",
+          "pullToRefresh": false,
+          "endlessScroll": false,
+          "deleteItemButton": false,
+          "detailHeaderField": "Name",
+          "addItemForm": true,
+          "editItemForm": false
+        }
+      ],
+      "title": "Accounts",
+      "addToNavigation": true,
+      "icon": "contacts"
     }
   ],
-  "dataProviders": [],
+  "dataProviders": [
+    {
+      "type": "kendo-ui-mobile:dataProvider",
+      "name": "helloworld",
+      "title": "Helloworld / Helloworld",
+      "source": "everlive",
+      "everliveKey": "gakynggvpe809tvj",
+      "offlineStorage": true
+    }
+  ],
   "name": "kendoUiMobileApp",
-  "navigation": "tabstrip",
+  "navigation": "drawer",
   "view": "home",
-  "transition": "slide",
-  "skin": "flat"
+  "skin": "nova",
+  "skinActive": "#ff4350",
+  "skinText": "#32364c",
+  "skinSecondary": "#888e90"
 }
